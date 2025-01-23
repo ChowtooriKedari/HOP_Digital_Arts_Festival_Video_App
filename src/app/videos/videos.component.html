@@ -1,0 +1,47 @@
+<div class="video-container">
+    <h1>Video List</h1>
+  
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="fetchVideos()"
+        placeholder="Search"
+      />
+      <button (click)="fetchVideos()">Search</button>
+    </div>
+  
+    <!-- Sort and Category Dropdowns -->
+    <div class="dropdowns">
+      <label>
+        Sort by:
+        <select [(ngModel)]="sortOption" (change)="fetchVideos()">
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+          <option value="Last Updated">Last Updated</option>
+        </select>
+      </label>
+      <label>
+        Category:
+        <select [(ngModel)]="category" (change)="fetchVideos()">
+          <option value="all">All</option>
+          <option value="category1">Category 1</option>
+          <option value="category2">Category 2</option>
+        </select>
+      </label>
+    </div>
+  
+    <!-- Video List -->
+    <div *ngIf="isLoading">Loading...</div>
+    <div *ngIf="!isLoading && videos.length === 0">No videos found.</div>
+    <div *ngFor="let video of videos" class="video-item">
+      <img [src]="thumbnails[video.videoId]" alt="Thumbnail" />
+      <div class="video-info">
+        <h3>{{ video.title }}</h3>
+        <p>{{ video.description }}</p>
+        <p>Last Updated: {{ video.uploadDate | date }}</p>
+      </div>
+    </div>
+  </div>
+  
