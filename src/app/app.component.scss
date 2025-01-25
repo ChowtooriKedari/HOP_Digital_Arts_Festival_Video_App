@@ -137,12 +137,12 @@
 @media (min-width: 768px) {
   /* Show Desktop Navigation */
   .menu-desktop {
-    display: block; /* Show on larger screens */
+    display: block !important; /* Show on larger screens */
   }
 
   /* Hide Hamburger Menu */
   .menu-button {
-    display: none; /* Hide on larger screens */
+    display: none !important; /* Hide on larger screens */
   }
 
   /* Ensure Overlay is Hidden */
