@@ -1,0 +1,13 @@
+<div class="contact-us">
+    <h2>Contact Us</h2>
+    <form (submit)="sendEmail($event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" required />
+  
+      <label for="question">Question:</label>
+      <textarea id="question" [(ngModel)]="contactForm.question" name="question" required></textarea>
+  
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  

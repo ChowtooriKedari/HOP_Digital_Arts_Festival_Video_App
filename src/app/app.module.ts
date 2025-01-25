@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { VideosComponent } from './videos/videos.component';
 import { FormsModule } from '@angular/forms';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideosComponent
+    VideosComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

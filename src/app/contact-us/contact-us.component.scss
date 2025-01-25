@@ -1,0 +1,47 @@
+.contact-us {
+    padding: 20px;
+    text-align: center;
+  
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left;
+  
+      label {
+        display: block;
+        font-size: 16px;
+        margin: 10px 0 5px;
+      }
+  
+      input,
+      textarea {
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        background-color: #1e88e5;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #1565c0;
+        }
+      }
+    }
+  }
+  

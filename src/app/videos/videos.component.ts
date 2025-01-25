@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
   selector: 'app-videos',
   templateUrl: './videos.component.html',
@@ -11,7 +10,6 @@ export class VideosComponent implements OnInit {
   searchQuery: string = '';
   sortOption: string = 'A-Z';
   category: string = 'all';
-  thumbnails: { [key: string]: string } = {};
   isLoading: boolean = false;
 
   constructor(private http: HttpClient) {}
@@ -28,7 +26,6 @@ export class VideosComponent implements OnInit {
     this.http.get<any[]>(apiUrl, { params }).subscribe(
       (data) => {
         this.videos = this.sortVideos(data);
-        this.generateThumbnails(data);
       },
       (error) => {
         console.error('Error fetching videos:', error);
@@ -37,13 +34,6 @@ export class VideosComponent implements OnInit {
         this.isLoading = false;
       }
     );
-  }
-
-  generateThumbnails(videos: any[]): void {
-    videos.forEach((video) => {
-      // Simulate thumbnail generation; replace with actual thumbnail service if needed.
-      this.thumbnails[video.videoId] = video.thumbnailUrl || 'path-to-placeholder-thumbnail';
-    });
   }
 
   sortVideos(videos: any[]): any[] {
@@ -55,5 +45,16 @@ export class VideosComponent implements OnInit {
       return videos.sort((a, b) => new Date(b.uploadDate).getTime() - new Date(a.uploadDate).getTime());
     }
     return videos;
+  }
+
+  playVideo(event: Event): void {
+    const videoElement = event.target as HTMLVideoElement;
+    videoElement.play();
+  }
+
+  pauseVideo(event: Event): void {
+    const videoElement = event.target as HTMLVideoElement;
+    videoElement.pause();
+    videoElement.currentTime = 0; // Reset to the start
   }
 }
