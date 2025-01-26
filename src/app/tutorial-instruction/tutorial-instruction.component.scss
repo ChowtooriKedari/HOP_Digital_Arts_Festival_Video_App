@@ -9,14 +9,15 @@
   font-family: Helvetica, Arial, sans-serif;
   padding: 0 10px;
   text-align: center;
+  background: linear-gradient(180deg, #5F54FF, #FFFFFF);
 }
 .skip-button {
   position: absolute;
-  top: 100vh;
-  right: 40vw;
+  top: 10vh;
+  right: 41vw;
   background: none;
   border: none;
-  font-size: 2vw;
+  font-size: 3vw;
   color: #392BFE;
   cursor: pointer;
 }

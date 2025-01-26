@@ -1,6 +1,7 @@
 .video-container {
   padding: 20px;
   font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #5F54FF, #FFFFFF);
 
   .search-bar {
     display: flex;
@@ -128,5 +129,158 @@
         max-width: 100%; // Full width video on mobile
       }
     }
+  }
+}
+
+/* App Container */
+.app-container {
+  font-family: 'Arial, sans-serif';
+  background-color: #121212;
+  color: white;
+//  min-height: 100vh;
+
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+        color: white;
+        margin: 0;
+        white-space: nowrap;
+      }
+    }
+
+    /* Desktop Navigation Menu */
+    .menu-desktop {
+      display: none; /* Hidden by default */
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+
+        li {
+          a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+
+            &:hover {
+              color: #ffcc00;
+            }
+          }
+        }
+      }
+    }
+
+    /* Hamburger Menu Button (Mobile Only) */
+    .menu-button {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+
+      .menu-icon {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+      }
+    }
+  }
+}
+
+/* Mobile Menu (Overlay) */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); /* Dark background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s ease; /* Smooth slide-in effect */
+  z-index: 20;
+
+  &.open {
+    left: 0; /* Slide the menu into view */
+  }
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffcc00;
+    }
+  }
+
+  .menu-content {
+    text-align: center;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 20px 0;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 24px;
+
+          &:hover {
+            color: #ffcc00;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  /* Show Desktop Navigation */
+  .menu-desktop {
+    display: block !important; /* Show on larger screens */
+  }
+
+  /* Hide Hamburger Menu */
+  .menu-button {
+    display: none !important; /* Hide on larger screens */
+  }
+
+  /* Ensure Overlay is Hidden */
+  .menu-overlay {
+    display: none !important;
   }
 }

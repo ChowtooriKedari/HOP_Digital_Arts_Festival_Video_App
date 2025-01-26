@@ -1,3 +1,38 @@
+<div class="app-container">
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="logo-container">
+      <img src="assets/hoplogo.png" alt="Hopkins Center Logo" class="logo" />
+      <h1>Digital Arts Festival</h1>
+    </div>
+
+    <!-- Desktop Navigation Menu -->
+    <nav class="menu-desktop">
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger Menu Button (Mobile Only) -->
+    <button class="menu-button" (click)="toggleMenu()">
+      <span class="menu-icon"></span>
+      <span class="menu-icon"></span>
+      <span class="menu-icon"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu (Overlay) -->
+  <div class="menu-overlay" [class.open]="menuOpen">
+    <button class="close-button" (click)="closeMenu()">&times;</button>
+    <div class="menu-content">
+      <ul>
+        <li><a routerLink="/home" (click)="closeMenu()">Home</a></li>
+        <li><a routerLink="/contact" (click)="closeMenu()">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <div class="contact-us">
     <h2>Contact Us</h2>
     <form (submit)="sendEmail($event)">

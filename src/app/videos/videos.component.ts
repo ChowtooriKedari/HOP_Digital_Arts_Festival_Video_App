@@ -13,7 +13,16 @@ export class VideosComponent implements OnInit {
   isLoading: boolean = false;
 
   constructor(private http: HttpClient) {}
+  menuOpen: boolean = false;
 
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+  
   ngOnInit(): void {
     this.fetchVideos();
   }

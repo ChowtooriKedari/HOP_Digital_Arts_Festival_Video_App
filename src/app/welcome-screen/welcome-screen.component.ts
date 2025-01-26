@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-welcome-screen',
@@ -11,5 +12,17 @@ export class WelcomeScreenComponent {
 
   goToNext() {
     this.router.navigate(['/tutorial-video-selection']);
+  }
+
+  @HostListener('window:touchmove', ['$event'])
+  handleTouchMove(event: TouchEvent) {
+    if (event.touches.length === 1) {
+      const touch = event.touches[0];
+      const startX = 0;
+      const currentX = touch.clientX;
+      if (currentX - startX > 50) {
+        this.goToNext();
+      }
+    }
   }
 }

@@ -13,6 +13,16 @@ export class ContactUsComponent {
   };
 
   constructor(private http: HttpClient) {}
+  menuOpen: boolean = false;
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+  
 
   sendEmail(event: Event): void {
     event.preventDefault();
