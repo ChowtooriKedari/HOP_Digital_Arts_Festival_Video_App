@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { VideosComponent } from './videos/videos.component';
 import { FormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
+import { TutorialVideoSelectionComponent } from './tutorial-video-selection/tutorial-video-selection.component';
+import { TutorialInstructionComponent } from './tutorial-instruction/tutorial-instruction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideosComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    WelcomeScreenComponent,
+    TutorialVideoSelectionComponent,
+    TutorialInstructionComponent    
   ],
   imports: [
     BrowserModule,

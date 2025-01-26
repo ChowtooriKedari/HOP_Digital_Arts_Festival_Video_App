@@ -1,0 +1,22 @@
+
+// src/app/welcome-screen/welcome-screen.component.scss
+.background-gradient {
+  background: linear-gradient(180deg, #5F54FF, #FFFFFF);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #392BFE;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 0 10px;
+}
+.arrow-button {
+  font-size: 5vw;
+  margin-top: 5vh;
+  background: none;
+  border: none;
+  color: #392BFE;
+  cursor: pointer;
+}

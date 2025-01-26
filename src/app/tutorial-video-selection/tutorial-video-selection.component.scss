@@ -1,0 +1,31 @@
+.tutorial-video-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #392BFE;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 10px;
+  text-align: center;
+}
+.video-container {
+  width: 90%;
+  max-width: 600px;
+  margin-top: 5vh;
+}
+video {
+  width: 100%;
+  border: 1px solid #392BFE;
+  border-radius: 8px;
+}
+.skip-button {
+  position: absolute;
+  top: 20vh;
+  right: 30vw;
+  background: none;
+  border: none;
+  font-size: 4vw;
+  color: #392BFE;
+  cursor: pointer;
+}
